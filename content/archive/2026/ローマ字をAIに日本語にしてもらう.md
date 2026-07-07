@@ -49,10 +49,8 @@ korewo nihonzinnha tadano yubino kiyousa dakede kokufuku sitekita.
 daga, touzennnagara  fukga takai .
 
 katakorini narunoha touzenda.
+
 ![[0707_01.png]]
-
-
---kokomade--
 
 ---
 
@@ -77,7 +75,6 @@ katakorini narunoha touzenda.
 
 これを日本人はただの指の器用さだけで克服してきた。 だが、当然ながら負荷が高い。肩こりになるのは当然だ。
 ![[0707_01.png]]
---ここまで--
 
 ---
 という感じで、文章入力が手軽になります。
