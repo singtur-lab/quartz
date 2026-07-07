@@ -6,7 +6,7 @@
 
 ---
 最新記事:
-[[ローマ字をAIに日本語にしてもらう]]（2026/07/07）
+https://singtur.pages.dev/archive/2026/
 
 ---
 ## 深寅芥（みとらあくた）Akuta Mitora
