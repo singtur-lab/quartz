@@ -2,7 +2,7 @@
 2026/07/07
 このサイトは2026年7月7日より構築を開始しました。環境としては、
 「Obisidian+quartz+Github+Cloudflare」です。死後恐らく半世紀以上は残るサイトになるだろうと予測して構築しました。維持管理費が永遠に0円という事が最大の強みかと思います。
-※詳しくはこちらをお読みください。→quartz [[quartz/content/quartz/index|index]]
+※詳しくはこちらをお読みください。→quartz [[quartz/index|index]]
 
 ---
 
