@@ -1,6 +1,6 @@
-# Obsidian + Quartz + GitHub + Cloudflare という環境
+# Obsidian + quartz + GitHub + Cloudflare という環境
 2026/07/07
-
+[[quartz]]・[[Cloudflare]]
 ## この環境が最強な理由
 恐らく今後、「**Obsidian + Quartz + GitHub + Cloudflare**」というサイト構築が、個人のサイトとしては最適解になるであろうと私は考えています。
 
