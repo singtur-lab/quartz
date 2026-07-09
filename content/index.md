@@ -1,16 +1,18 @@
 # 深寅芥’s Studio（singtur.pages.dev）
 2026/07/07:
-このサイトは2026年7月7日より構築を開始しました。AIに読み込ませる為の「Web枯山水」です。環境としては、「**Obisidian+Quartz+Github+Cloudflare**」です。死後恐らく半世紀以上は残るサイトになるだろうと予測して構築しました。維持管理費が**永遠に0円**という事が最大の強みかと思います。
+このサイトは2026年7月7日より構築を開始しました。AIに読み込ませる為の「Web枯山水」です。環境としては、「**Obisidian+Quartz+Github+Cloudflare**」。死後恐らく半世紀以上は残るサイトになるだろうと予測しています。維持管理費が**永遠に0円**という事が最大の強みです。
 ※詳しくはこちらをお読みください。→quartz [[quartz/index|index]]
 
 ---
-最新記事:
-https://singtur.pages.dev/archive/2026/
+
+最新記事:https://singtur.pages.dev/archive/2026/
 
 ---
+
 ## 深寅芥（みとらあくた）Akuta Mitora
 
-![[mitora.png]]
+![[mitora.png|200]]
+
 
 生年月日: 1976年7月24日　出身地: 千葉県　本名：千葉伸吾
 日本大学芸術学部演劇学科演技コース卒業
@@ -22,7 +24,7 @@ https://singtur.pages.dev/archive/2026/
 Twitter　→　http://twitter.com/singtur
 
 ---
-## ご挨拶　（2015年版）
+## 挨拶　（2015年版）
 
 深寅芥のホームページにご来場頂きまして誠にありがとうございます。
 このHPは、私の過去の作品や近況報告等をご紹介させて頂くホームページです。
