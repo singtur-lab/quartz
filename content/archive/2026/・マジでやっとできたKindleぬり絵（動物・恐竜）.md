@@ -14,7 +14,7 @@
 なので、3回目で2冊とも審査が通って、心底ホッとした。
 
 これで実績ができた。嬉しい。
-日本Kindleでの「頑張らないAI生活」に続き、
+日本Kindleでの「頑張らないAI習慣」に続き、
 米国Kindleでの「動物」「恐竜」ぬり絵の発刊。
 無事、目標が達成できて嬉しい。
 
@@ -47,3 +47,9 @@ https://www.amazon.com/dp/B0H85ZNZKH?spcref=PRINT_LISTING
 
 
 ---
+**初Kindle書籍です！全ての基本がここに詰まってます！**
+
+ **書籍：頑張らないAI習慣: 1日10分、手元のスマホ1台で人生を静かに動かす方法**
+![[ganba_cover.png|289]]
+
+LINK:https://amzn.to/4gZEXvu
