@@ -1,6 +1,7 @@
 2026/07/09
 
 ![[quartz/content/kindle/img/0709_08.png]]
+
 ---
 「**Kindle出版無事できました！**」
 
