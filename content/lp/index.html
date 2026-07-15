@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Three cheerful bold and easy coloring books for little artists: animals, dinosaurs, and kawaii sweets."
+    />
+    <title>Bold & Easy Coloring Books | Akuta Mitora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,500;9..40,600;9..40,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #29202a;
+        --cream: #fffdf5;
+        --pink: #ff718b;
+        --yellow: #ffd83d;
+        --blue: #6bd0e8;
+        --green: #b6dc58;
+        --line: 3px solid var(--ink);
+        --shadow: 7px 7px 0 var(--ink);
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 4% 4%, rgba(255, 216, 61, .78) 0 3px, transparent 4px) 0 0 / 24px 24px,
+          var(--cream);
+        font-family: "DM Sans", sans-serif;
+      }
+
+      a { color: inherit; }
+
+      .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+
+      .topbar {
+        min-height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 10px 0;
+        font-weight: 700;
+      }
+
+      .brand {
+        font-family: "Baloo 2", sans-serif;
+        font-weight: 800;
+        font-size: 1.2rem;
+        letter-spacing: .02em;
+        text-decoration: none;
+      }
+
+      .nav-link { font-size: .9rem; text-decoration: none; }
+      .nav-link:hover { text-decoration: underline; }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 58px 0 76px;
+        background: linear-gradient(125deg, #fff3af 0%, #ffd95b 47%, #ffba61 100%);
+        border-top: var(--line);
+        border-bottom: var(--line);
+      }
+
+      .hero::before, .hero::after {
+        content: "";
+        position: absolute;
+        border: var(--line);
+        border-radius: 50%;
+        opacity: .95;
+      }
+
+      .hero::before {
+        width: 190px;
+        height: 190px;
+        right: -40px;
+        top: -78px;
+        background: var(--pink);
+      }
+
+      .hero::after {
+        width: 120px;
+        height: 120px;
+        left: -46px;
+        bottom: -56px;
+        background: var(--blue);
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1.05fr .95fr;
+        gap: 44px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 3px 14px;
+        border: var(--line);
+        border-radius: 999px;
+        background: #fff;
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+
+      h1, h2, h3, p { margin-top: 0; }
+
+      h1, h2, h3 {
+        font-family: "Baloo 2", sans-serif;
+        font-weight: 800;
+        line-height: .96;
+      }
+
+      h1 {
+        max-width: 690px;
+        margin: 16px 0 20px;
+        font-size: clamp(3.1rem, 6.6vw, 5.5rem);
+        letter-spacing: -.035em;
+      }
+
+      .hero-copy p {
+        max-width: 540px;
+        margin-bottom: 26px;
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+        line-height: 1.6;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 10px 22px;
+        border: var(--line);
+        border-radius: 10px;
+        background: var(--ink);
+        color: #fff;
+        box-shadow: 4px 4px 0 rgba(41, 32, 42, .28);
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform .18s ease, box-shadow .18s ease;
+      }
+
+      .button:hover { transform: translate(3px, 3px); box-shadow: 1px 1px 0 rgba(41, 32, 42, .28); }
+      .button:focus-visible, a:focus-visible { outline: 4px solid #fff; outline-offset: 3px; }
+
+      .book-stack {
+        position: relative;
+        min-height: 390px;
+      }
+
+      .mini-book {
+        position: absolute;
+        width: min(40%, 206px);
+        overflow: hidden;
+        border: var(--line);
+        border-radius: 9px;
+        box-shadow: var(--shadow);
+        background: #fff;
+        transform-origin: bottom center;
+      }
+
+      .mini-book img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+      .mini-book:nth-child(1) { left: 2%; top: 58px; transform: rotate(-11deg); }
+      .mini-book:nth-child(2) { left: 29%; top: 4px; transform: rotate(2deg); z-index: 2; }
+      .mini-book:nth-child(3) { right: 0; top: 62px; transform: rotate(11deg); }
+
+      main { padding: 76px 0 88px; }
+
+      .section-heading { max-width: 680px; margin-bottom: 36px; }
+      .section-heading h2 { margin-bottom: 10px; font-size: clamp(2.4rem, 5vw, 3.8rem); }
+      .section-heading p { margin: 0; font-size: 1.05rem; line-height: 1.6; }
+
+      .books { display: grid; gap: 34px; }
+
+      .book-card {
+        display: grid;
+        grid-template-columns: 280px 1fr 235px;
+        gap: 30px;
+        align-items: center;
+        padding: 26px;
+        border: var(--line);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .book-card.animal { background: #ffe258; }
+      .book-card.dinosaur { background: #8ee0f0; }
+      .book-card.sweets { background: #ffa0b0; }
+
+      .cover-wrap {
+        overflow: hidden;
+        border: var(--line);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 5px 5px 0 rgba(41, 32, 42, .28);
+      }
+
+      .cover-wrap img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+
+      .book-copy h3 { margin-bottom: 8px; font-size: clamp(2rem, 3.4vw, 3rem); }
+      .book-copy p { margin-bottom: 15px; line-height: 1.55; }
+
+      .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+      .tag {
+        padding: 5px 10px;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .82);
+        font-size: .82rem;
+        font-weight: 700;
+      }
+
+      .sample {
+        position: relative;
+        padding: 9px;
+        border: var(--line);
+        border-radius: 10px;
+        background: #fff;
+        transform: rotate(3deg);
+        box-shadow: 5px 5px 0 rgba(41, 32, 42, .25);
+      }
+
+      .sample img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+      .sample-label {
+        position: absolute;
+        right: -12px;
+        bottom: -16px;
+        padding: 7px 10px;
+        border: 2px solid var(--ink);
+        border-radius: 6px;
+        background: #fff;
+        font-family: "Baloo 2", sans-serif;
+        font-weight: 800;
+        transform: rotate(-5deg);
+      }
+
+      .how { margin-top: 92px; }
+      .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .step { padding: 25px; border: var(--line); border-radius: 16px; background: #fff; }
+      .step-number { display: block; margin-bottom: 12px; color: var(--pink); font-family: "Baloo 2", sans-serif; font-size: 3rem; font-weight: 800; line-height: .8; }
+      .step h3 { margin-bottom: 8px; font-size: 1.55rem; }
+      .step p { margin: 0; line-height: 1.5; }
+
+      .closing {
+        position: relative;
+        overflow: hidden;
+        margin-top: 72px;
+        padding: 50px 30px;
+        border: var(--line);
+        border-radius: 22px;
+        background: var(--ink);
+        color: #fff;
+        text-align: center;
+      }
+
+      .closing::before {
+        content: "* * *";
+        position: absolute;
+        top: -13px;
+        left: 0;
+        width: 100%;
+        color: var(--yellow);
+        font-family: "Baloo 2", sans-serif;
+        font-size: 3rem;
+        letter-spacing: .7em;
+      }
+
+      .closing h2 { max-width: 650px; margin: 15px auto 14px; font-size: clamp(2.5rem, 5vw, 4rem); }
+      .closing p { max-width: 520px; margin: 0 auto 23px; line-height: 1.55; }
+      .closing .button { background: var(--yellow); color: var(--ink); }
+
+      footer { padding: 26px 0 36px; text-align: center; font-size: .86rem; }
+
+      @media (max-width: 820px) {
+        .hero-grid { grid-template-columns: 1fr; }
+        .book-stack { max-width: 470px; width: 100%; margin: 0 auto; min-height: 350px; }
+        .book-card { grid-template-columns: 170px 1fr; }
+        .sample { display: none; }
+      }
+
+      @media (max-width: 560px) {
+        .container { width: min(100% - 28px, 1120px); }
+        .topbar { min-height: 52px; }
+        .nav-link { display: none; }
+        .hero { padding: 42px 0 48px; }
+        .book-stack { min-height: 285px; }
+        .book-card { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
+        .cover-wrap { max-width: 180px; }
+        .steps { grid-template-columns: 1fr; }
+        main { padding: 52px 0 62px; }
+        .how { margin-top: 68px; }
+        .closing { margin-top: 56px; padding: 48px 20px 35px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container topbar">
+      <a class="brand" href="#top">Akuta Mitora</a>
+      <a class="nav-link" href="#books">Meet the books</a>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Coloring fun for little artists</span>
+          <h1>Big, happy pages made for small hands.</h1>
+          <p>Discover three cheerful coloring books filled with friendly animals, playful dinosaurs, and the sweetest kawaii treats.</p>
+          <a class="button" href="#books">Find a favorite book</a>
+        </div>
+        <div class="book-stack" aria-label="Three coloring book covers">
+          <div class="mini-book"><img src="assets/animal-cover.png" alt="Bold and Easy Animal Coloring Book cover" /></div>
+          <div class="mini-book"><img src="assets/dinosaur-cover.png" alt="Bold and Easy Dinosaur Coloring Book cover" /></div>
+          <div class="mini-book"><img src="assets/sweets-cover.png" alt="Bold and Easy Kawaii Sweets Coloring Book cover" /></div>
+        </div>
+      </div>
+    </section>
+
+    <main class="container">
+      <section id="books" aria-labelledby="books-title">
+        <div class="section-heading">
+          <span class="eyebrow">Three books to explore</span>
+          <h2 id="books-title">Pick a world. Grab some crayons. Let the fun begin.</h2>
+          <p>Each book features bold, simple artwork designed to make coloring feel approachable, satisfying, and wonderfully fun.</p>
+        </div>
+
+        <div class="books">
+          <article class="book-card animal">
+            <div class="cover-wrap"><img src="assets/animal-cover.png" alt="Bold and Easy Animal Coloring Book cover" /></div>
+            <div class="book-copy">
+              <h3>Animal Coloring Book</h3>
+              <p>Say hello to adorable animal friends, from playful pandas to gentle forest and ocean creatures. A warm, easygoing coloring adventure for young animal lovers.</p>
+              <div class="tags"><span class="tag">Ages 1-4</span><span class="tag">Cute animal friends</span><span class="tag">Big & simple pages</span></div>
+              <p style="margin: 20px 0 0;"><a class="button" href="https://www.amazon.com/dp/B0H85YVKTS" target="_blank" rel="noopener noreferrer">View on Amazon</a></p>
+            </div>
+            <div class="sample"><img src="assets/animal-sample.jpeg" alt="Sample animal coloring page" /><span class="sample-label">Inside!</span></div>
+          </article>
+
+          <article class="book-card dinosaur">
+            <div class="cover-wrap"><img src="assets/dinosaur-cover.png" alt="Bold and Easy Dinosaur Coloring Book cover" /></div>
+            <div class="book-copy">
+              <h3>Dinosaur Coloring Book</h3>
+              <p>Join cheerful dinosaurs on gentle prehistoric adventures. These friendly dinos are ready for bright colors, big imaginations, and plenty of roaring good fun.</p>
+              <div class="tags"><span class="tag">Ages 2-5</span><span class="tag">Friendly dinosaurs</span><span class="tag">Big & simple pages</span></div>
+              <p style="margin: 20px 0 0;"><a class="button" href="https://www.amazon.com/dp/B0H85ZNZKH" target="_blank" rel="noopener noreferrer">View on Amazon</a></p>
+            </div>
+            <div class="sample"><img src="assets/dinosaur-sample.jpeg" alt="Sample dinosaur coloring page" /><span class="sample-label">Inside!</span></div>
+          </article>
+
+          <article class="book-card sweets">
+            <div class="cover-wrap"><img src="assets/sweets-cover.png" alt="Bold and Easy Kawaii Sweets Coloring Book cover" /></div>
+            <div class="book-copy">
+              <h3>Kawaii Sweets Coloring Book</h3>
+              <p>Color a delicious little world of smiling cupcakes, donuts, cookies, and other sweet treats. Every page is a cozy invitation to create something bright.</p>
+              <div class="tags"><span class="tag">Ages 2-5</span><span class="tag">Kawaii sweet treats</span><span class="tag">Big & simple pages</span></div>
+              <p style="margin: 20px 0 0;"><a class="button" href="https://www.amazon.com/dp/B0H8PJ4VZZ" target="_blank" rel="noopener noreferrer">View on Amazon</a></p>
+            </div>
+            <div class="sample"><img src="assets/sweets-sample.jpeg" alt="Sample kawaii sweets coloring page" /><span class="sample-label">Inside!</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="how" aria-labelledby="how-title">
+        <div class="section-heading">
+          <span class="eyebrow">A simple coloring moment</span>
+          <h2 id="how-title">Made for bright little imaginations.</h2>
+        </div>
+        <div class="steps">
+          <article class="step"><span class="step-number">01</span><h3>Choose a theme</h3><p>Animals, dinosaurs, or sweet little treats - there is a playful world for every mood.</p></article>
+          <article class="step"><span class="step-number">02</span><h3>Pick your colors</h3><p>Reach for crayons, colored pencils, or markers and make each page your own.</p></article>
+          <article class="step"><span class="step-number">03</span><h3>Make it yours</h3><p>There are no wrong colors. Every finished page is a tiny work of art worth celebrating.</p></article>
+        </div>
+      </section>
+
+      <section class="closing" aria-labelledby="closing-title">
+        <h2 id="closing-title">Ready for a colorful new adventure?</h2>
+        <p>Explore the full collection on Amazon and find the perfect coloring companion for your little artist.</p>
+        <a class="button" href="#books">Explore the collection</a>
+      </section>
+    </main>
+
+    <footer class="container">Copyright 2026 Akuta Mitora. All rights reserved.</footer>
+  </body>
+</html>

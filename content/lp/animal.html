@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bold and Easy Animal Coloring Book - big, cheerful coloring fun for little artists ages 1-4." />
+    <title>Bold and Easy Animal Coloring Book | Akuta Mitora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --ink: #25211c;
+        --paper: #fffdf6;
+        --sun: #ffe15a;
+        --leaf: #94c748;
+        --orange: #f07b36;
+        --sky: #a9e0ec;
+        --line: 3px solid var(--ink);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; }
+      a { color: inherit; }
+      .wrap { width: min(1120px, calc(100% - 40px)); margin: auto; }
+
+      .site-header { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+      .brand { font-family: "Baloo 2", sans-serif; font-size: 1.22rem; font-weight: 800; letter-spacing: .02em; text-decoration: none; }
+      .back { font-size: .9rem; font-weight: 700; text-decoration: none; }
+      .back:hover { text-decoration: underline; }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        border-block: var(--line);
+        background: var(--sun);
+      }
+
+      .hero::before, .hero::after { content: ""; position: absolute; border: var(--line); border-radius: 50%; }
+      .hero::before { width: 205px; height: 205px; top: -92px; right: 4%; background: var(--orange); }
+      .hero::after { width: 175px; height: 175px; bottom: -96px; left: -56px; background: var(--sky); }
+      .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 52px; padding: 54px 0 64px; }
+      .eyebrow { display: inline-block; padding: 4px 13px; border: var(--line); border-radius: 99px; background: #fff; font-size: .78rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+      h1, h2, h3 { font-family: "Baloo 2", sans-serif; font-weight: 800; line-height: .95; }
+      h1 { max-width: 630px; margin: 15px 0 19px; font-size: clamp(3.35rem, 7vw, 6rem); letter-spacing: -.04em; }
+      .hero-copy p { max-width: 520px; margin: 0 0 25px; font-size: 1.13rem; line-height: 1.6; }
+      .button { display: inline-flex; justify-content: center; align-items: center; min-height: 54px; padding: 10px 22px; border: var(--line); border-radius: 10px; background: var(--ink); box-shadow: 5px 5px 0 rgba(37, 33, 28, .28); color: #fff; font-weight: 700; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
+      .button:hover { transform: translate(3px, 3px); box-shadow: 2px 2px 0 rgba(37, 33, 28, .28); }
+      .button:focus-visible, a:focus-visible { outline: 4px solid #fff; outline-offset: 3px; }
+
+      .hero-art { position: relative; min-height: 430px; }
+      .book { position: absolute; z-index: 2; top: 0; right: 5%; width: min(76%, 330px); overflow: hidden; border: var(--line); border-radius: 9px; background: #fff; box-shadow: 10px 10px 0 var(--ink); transform: rotate(4deg); }
+      .book img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+      .scribble { position: absolute; z-index: 1; bottom: 3px; left: 0; width: 64%; overflow: hidden; border: var(--line); border-radius: 8px; background: #fff; box-shadow: 7px 7px 0 rgba(37, 33, 28, .24); transform: rotate(-8deg); }
+      .scribble img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+      .burst { position: absolute; z-index: 3; right: 0; bottom: 21px; width: 120px; aspect-ratio: 1; display: grid; place-items: center; padding: 15px; border: var(--line); border-radius: 50%; background: var(--leaf); font-family: "Baloo 2", sans-serif; font-size: 1.18rem; font-weight: 800; line-height: 1; text-align: center; transform: rotate(10deg); }
+
+      main { padding: 84px 0; }
+      .intro { max-width: 700px; margin-bottom: 38px; }
+      .intro h2 { margin: 12px 0; font-size: clamp(2.5rem, 5vw, 4.2rem); }
+      .intro p { max-width: 650px; margin: 0; font-size: 1.08rem; line-height: 1.6; }
+
+      .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 96px; }
+      .feature { min-height: 180px; padding: 26px; border: var(--line); border-radius: 16px; background: #fff; }
+      .feature:nth-child(2) { background: #d7edaa; }
+      .feature:nth-child(3) { background: #c9ebf2; }
+      .feature-number { display: block; margin-bottom: 14px; color: var(--orange); font-family: "Baloo 2", sans-serif; font-size: 2.8rem; font-weight: 800; line-height: .75; }
+      .feature h3 { margin: 0 0 8px; font-size: 1.7rem; }
+      .feature p { margin: 0; line-height: 1.5; }
+
+      .section-title { max-width: 700px; margin-bottom: 28px; }
+      .section-title h2 { margin: 11px 0 0; font-size: clamp(2.5rem, 5vw, 4rem); }
+      .page-pairs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+      .pair { padding: 19px; border: var(--line); border-radius: 19px; background: #fff; }
+      .pair h3 { margin: 2px 0 17px; font-size: 1.85rem; }
+      .pair-images { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+      .page-image { position: relative; overflow: hidden; border: var(--line); border-radius: 7px; background: #fff; }
+      .page-image img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+      .caption { position: absolute; left: 7px; bottom: 7px; padding: 4px 8px; border: 2px solid var(--ink); border-radius: 5px; background: #fff; font-size: .75rem; font-weight: 700; }
+      .pair p { margin: 16px 0 2px; line-height: 1.5; }
+
+      .moment { display: grid; grid-template-columns: .93fr 1.07fr; align-items: center; gap: 48px; margin: 102px 0 94px; padding: 35px; border: var(--line); border-radius: 22px; background: #d7edaa; }
+      .moment-photo { overflow: hidden; border: var(--line); border-radius: 11px; background: #fff; box-shadow: 7px 7px 0 rgba(37, 33, 28, .25); transform: rotate(-2deg); }
+      .moment-photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+      .moment-copy h2 { margin: 13px 0; font-size: clamp(2.5rem, 4.7vw, 3.9rem); }
+      .moment-copy p { margin: 0; font-size: 1.08rem; line-height: 1.6; }
+
+      .cta { position: relative; overflow: hidden; padding: 55px 28px; border: var(--line); border-radius: 22px; background: var(--ink); color: #fff; text-align: center; }
+      .cta::before { content: "* * *"; position: absolute; top: -15px; left: 0; width: 100%; color: var(--sun); font-family: "Baloo 2", sans-serif; font-size: 3.3rem; letter-spacing: .52em; }
+      .cta h2 { max-width: 650px; margin: 18px auto 13px; font-size: clamp(2.6rem, 5vw, 4.2rem); }
+      .cta p { max-width: 530px; margin: 0 auto 24px; line-height: 1.6; }
+      .cta .button { background: var(--sun); color: var(--ink); }
+      footer { padding: 29px 0 38px; text-align: center; font-size: .86rem; }
+
+      @media (max-width: 780px) {
+        .hero-inner, .moment { grid-template-columns: 1fr; }
+        .hero-art { max-width: 470px; width: 100%; margin: 0 auto; }
+        .features { grid-template-columns: 1fr; }
+        .moment { gap: 28px; }
+        .moment-photo { max-width: 420px; }
+      }
+      @media (max-width: 560px) {
+        .wrap { width: min(100% - 28px, 1120px); }
+        .site-header { min-height: 53px; }
+        .back { display: none; }
+        .hero-inner { gap: 28px; padding: 42px 0 49px; }
+        .hero-art { min-height: 320px; }
+        .burst { width: 92px; font-size: .9rem; }
+        main { padding: 58px 0; }
+        .features { margin-bottom: 66px; }
+        .page-pairs { grid-template-columns: 1fr; }
+        .moment { margin: 70px 0 64px; padding: 22px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="wrap site-header">
+      <a class="brand" href="index.html">Akuta Mitora</a>
+      <a class="back" href="index.html">All coloring books</a>
+    </header>
+
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">Ages 1-4</span>
+          <h1>Color outside the lines. That is the fun.</h1>
+          <p>A cheerful animal coloring book with big, friendly pictures made for little hands, big imaginations, and happy coloring moments.</p>
+          <a class="button" href="https://www.amazon.com/dp/B0H85YVKTS" target="_blank" rel="noopener noreferrer">Get the book on Amazon</a>
+        </div>
+        <div class="hero-art" aria-label="Animal coloring book and a child's colorful page">
+          <div class="book"><img src="assets/animal-cover.png" alt="Bold and Easy Animal Coloring Book cover" /></div>
+          <div class="scribble"><img src="assets/animal-page/squirrel-kid-art.jpeg" alt="A child's colorful squirrel coloring page" /></div>
+          <div class="burst">BIG<br />FUN!</div>
+        </div>
+      </div>
+    </section>
+
+    <main class="wrap">
+      <section aria-labelledby="why-title">
+        <div class="intro">
+          <span class="eyebrow">A little animal adventure</span>
+          <h2 id="why-title">Made for coloring their very own way.</h2>
+          <p>From lion cubs to curious squirrels, each friendly animal is ready for any color a little artist can imagine.</p>
+        </div>
+        <div class="features">
+          <article class="feature"><span class="feature-number">01</span><h3>Friendly animals</h3><p>Little artists can meet cheerful animal friends on every page.</p></article>
+          <article class="feature"><span class="feature-number">02</span><h3>Big, bold artwork</h3><p>Simple illustrations leave plenty of room for colorful ideas.</p></article>
+          <article class="feature"><span class="feature-number">03</span><h3>Every color counts</h3><p>There is no wrong way to make an animal page their own.</p></article>
+        </div>
+      </section>
+
+      <section aria-labelledby="inside-title">
+        <div class="section-title">
+          <span class="eyebrow">Peek inside</span>
+          <h2 id="inside-title">From a blank page to a little masterpiece.</h2>
+        </div>
+        <div class="page-pairs">
+          <article class="pair">
+            <h3>Color the lion</h3>
+            <div class="pair-images">
+              <div class="page-image"><img src="assets/animal-page/lion-lineart.jpeg" alt="Lion coloring page before coloring" /><span class="caption">Before</span></div>
+              <div class="page-image"><img src="assets/animal-page/lion-coloring-together.jpeg" alt="Lion coloring page being colored by a child" /><span class="caption">In the moment</span></div>
+            </div>
+            <p>Big shapes and a friendly face make the page easy to jump into.</p>
+          </article>
+          <article class="pair">
+            <h3>Color the squirrel</h3>
+            <div class="pair-images">
+              <div class="page-image"><img src="assets/animal-page/squirrel-lineart.jpeg" alt="Squirrel coloring page before coloring" /><span class="caption">Before</span></div>
+              <div class="page-image"><img src="assets/animal-page/squirrel-kid-art.jpeg" alt="A child's colorful squirrel coloring page" /><span class="caption">After</span></div>
+            </div>
+            <p>All the colors are welcome when imagination is in charge.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="moment" aria-labelledby="moment-title">
+        <div class="moment-photo"><img src="assets/animal-page/lion-coloring-together.jpeg" alt="A child coloring a lion page at a wooden table" /></div>
+        <div class="moment-copy">
+          <span class="eyebrow">Make a coloring moment</span>
+          <h2 id="moment-title">A few crayons. A friendly animal. A happy little break.</h2>
+          <p>Whether they stay neatly inside the lines or scribble all around them, every page is a chance to explore, create, and be proud of what they made.</p>
+        </div>
+      </section>
+
+      <section class="cta" aria-labelledby="cta-title">
+        <h2 id="cta-title">Ready to meet the animal friends?</h2>
+        <p>Bring home a bright, simple coloring adventure for your little artist.</p>
+        <a class="button" href="https://www.amazon.com/dp/B0H85YVKTS" target="_blank" rel="noopener noreferrer">View on Amazon</a>
+      </section>
+    </main>
+
+    <footer class="wrap">Copyright 2026 Akuta Mitora. All rights reserved.</footer>
+  </body>
+</html>
