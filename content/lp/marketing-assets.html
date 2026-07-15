@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animal Coloring Book Marketing Assets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=DM+Sans:wght@600;700&display=swap" rel="stylesheet" />
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #26231e; font-family: "DM Sans", sans-serif; }
+      body[data-asset] .artboard { display: none !important; margin: 0; }
+      body[data-asset="pinterest"] #pinterest,
+      body[data-asset="mockup"] #mockup { display: block !important; }
+      body[data-asset="hero"] #hero { display: grid !important; }
+      .artboard { position: relative; overflow: hidden; margin: 48px auto; color: #28231e; }
+      .sticker { display: inline-block; padding: 10px 19px; border: 4px solid #28231e; border-radius: 999px; background: #fff; font-size: 22px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+      .headline { margin: 17px 0; font-family: "Baloo 2", sans-serif; font-weight: 800; line-height: .88; letter-spacing: -.045em; }
+      .caption { margin: 0; font-size: 26px; font-weight: 600; line-height: 1.42; }
+      .cover { display: block; overflow: hidden; border: 6px solid #28231e; border-radius: 11px; background: #fff; box-shadow: 15px 16px 0 #28231e; }
+      .cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+      #pinterest { width: 1080px; height: 1350px; padding: 76px 68px; background: #ffe462; }
+      #pinterest::before { content: ""; position: absolute; top: -125px; right: -95px; width: 350px; height: 350px; border: 5px solid #28231e; border-radius: 50%; background: #ef8243; }
+      #pinterest::after { content: ""; position: absolute; bottom: -70px; left: -80px; width: 245px; height: 245px; border: 5px solid #28231e; border-radius: 50%; background: #9bd1df; }
+      #pinterest .headline { position: relative; z-index: 2; max-width: 770px; font-size: 105px; }
+      #pinterest .caption { position: relative; z-index: 2; width: 570px; }
+      #pinterest .art { position: absolute; right: -52px; bottom: -40px; width: 575px; padding: 14px; border: 5px solid #28231e; border-radius: 15px; background: #fff; transform: rotate(8deg); box-shadow: 12px 12px 0 rgba(40,35,30,.25); }
+      #pinterest .art img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+      #pinterest .cover { position: absolute; z-index: 2; left: 74px; bottom: 94px; width: 324px; height: 434px; transform: rotate(-8deg); }
+      #pinterest .dots { position: absolute; z-index: 1; top: 494px; left: 55px; width: 340px; height: 140px; background: radial-gradient(circle, #98c64d 0 13px, transparent 14px) 0 0 / 55px 55px; transform: rotate(-13deg); }
+
+      #hero { width: 1600px; height: 900px; display: grid; grid-template-columns: 54% 46%; background: #d8eead; }
+      #hero .photo { height: 100%; overflow: hidden; border-right: 6px solid #28231e; }
+      #hero .photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 50%; }
+      #hero .copy { position: relative; padding: 109px 68px 50px; background: #ffe462; }
+      #hero .copy::before { content: ""; position: absolute; right: -85px; bottom: -90px; width: 280px; height: 280px; border: 5px solid #28231e; border-radius: 50%; background: #8dc9d9; }
+      #hero .headline { position: relative; z-index: 1; max-width: 600px; font-size: 94px; }
+      #hero .caption { position: relative; z-index: 1; max-width: 500px; font-size: 27px; }
+      #hero .cover { position: absolute; z-index: 2; right: 44px; bottom: 55px; width: 210px; height: 280px; transform: rotate(7deg); box-shadow: 10px 10px 0 #28231e; }
+
+      #mockup { width: 1200px; height: 1200px; padding: 80px; background: #a6dce7; }
+      #mockup::before { content: ""; position: absolute; inset: 0; background: linear-gradient(45deg, transparent 46%, rgba(255,255,255,.25) 46% 54%, transparent 54%); opacity: .6; }
+      #mockup .headline { position: relative; z-index: 2; width: 560px; font-size: 83px; }
+      #mockup .caption { position: relative; z-index: 2; width: 445px; font-size: 24px; }
+      #mockup .table { position: absolute; z-index: 1; right: -150px; bottom: -180px; width: 900px; height: 790px; border: 6px solid #28231e; border-radius: 50%; background: #c9864e; transform: rotate(-9deg); }
+      #mockup .book-shadow { position: absolute; z-index: 2; right: 144px; bottom: 130px; width: 480px; height: 130px; border-radius: 50%; background: rgba(40,35,30,.24); transform: rotate(-13deg); filter: blur(8px); }
+      #mockup .cover { position: absolute; z-index: 3; right: 175px; bottom: 138px; width: 432px; height: 576px; transform: rotate(-13deg); box-shadow: 19px 23px 0 rgba(40,35,30,.75); }
+      #mockup .crayon { position: absolute; z-index: 4; width: 38px; height: 235px; border: 4px solid #28231e; border-radius: 20px; }
+      #mockup .crayon::before { content: ""; position: absolute; top: -48px; left: -4px; width: 0; height: 0; border-left: 19px solid transparent; border-right: 19px solid transparent; border-bottom: 48px solid #f6d79c; }
+      #mockup .crayon.one { right: 91px; bottom: 355px; background: #ec6f79; transform: rotate(21deg); }
+      #mockup .crayon.two { right: 536px; bottom: 45px; background: #8fc54d; transform: rotate(-49deg); }
+    </style>
+  </head>
+  <body>
+    <section class="artboard" id="pinterest">
+      <span class="sticker">Ages 1-4</span>
+      <h1 class="headline">Big animal coloring fun.</h1>
+      <p class="caption">Friendly animals, big bold pages, and plenty of room for little imaginations.</p>
+      <div class="dots"></div>
+      <div class="cover"><img src="assets/animal-cover.png" alt="" /></div>
+      <div class="art"><img src="assets/animal-page/squirrel-kid-art.jpeg" alt="" /></div>
+    </section>
+
+    <section class="artboard" id="hero">
+      <div class="photo"><img src="assets/animal-page/lion-coloring-together.jpeg" alt="" /></div>
+      <div class="copy">
+        <span class="sticker">Color together</span>
+        <h1 class="headline">A little coloring time goes a long way.</h1>
+        <p class="caption">A cheerful animal adventure made for quiet moments, bright crayons, and happy little artists.</p>
+        <div class="cover"><img src="assets/animal-cover.png" alt="" /></div>
+      </div>
+    </section>
+
+    <section class="artboard" id="mockup">
+      <span class="sticker">Animal friends inside</span>
+      <h1 class="headline">A colorful adventure, ready anytime.</h1>
+      <p class="caption">A bright little gift for an afternoon of crayons and imagination.</p>
+      <div class="table"></div>
+      <div class="book-shadow"></div>
+      <div class="cover"><img src="assets/animal-cover.png" alt="" /></div>
+      <div class="crayon one"></div>
+      <div class="crayon two"></div>
+    </section>
+    <script>
+      const asset = new URLSearchParams(location.search).get("asset");
+      if (asset) document.body.dataset.asset = asset;
+    </script>
+  </body>
+</html>

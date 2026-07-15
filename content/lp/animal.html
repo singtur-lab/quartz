@@ -45,6 +45,8 @@
       h1, h2, h3 { font-family: "Baloo 2", sans-serif; font-weight: 800; line-height: .95; }
       h1 { max-width: 630px; margin: 15px 0 19px; font-size: clamp(3.35rem, 7vw, 6rem); letter-spacing: -.04em; }
       .hero-copy p { max-width: 520px; margin: 0 0 25px; font-size: 1.13rem; line-height: 1.6; }
+      .quick-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: -7px 0 24px; }
+      .quick-facts span { padding: 5px 10px; border: 2px solid var(--ink); border-radius: 999px; background: rgba(255,255,255,.78); font-size: .8rem; font-weight: 700; }
       .button { display: inline-flex; justify-content: center; align-items: center; min-height: 54px; padding: 10px 22px; border: var(--line); border-radius: 10px; background: var(--ink); box-shadow: 5px 5px 0 rgba(37, 33, 28, .28); color: #fff; font-weight: 700; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
       .button:hover { transform: translate(3px, 3px); box-shadow: 2px 2px 0 rgba(37, 33, 28, .28); }
       .button:focus-visible, a:focus-visible { outline: 4px solid #fff; outline-offset: 3px; }
@@ -85,6 +87,12 @@
       .moment-photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
       .moment-copy h2 { margin: 13px 0; font-size: clamp(2.5rem, 4.7vw, 3.9rem); }
       .moment-copy p { margin: 0; font-size: 1.08rem; line-height: 1.6; }
+      .anywhere { display: grid; grid-template-columns: .75fr 1.25fr; gap: 36px; align-items: center; margin: 0 0 94px; padding: 32px; border: var(--line); border-radius: 22px; background: #d9efaf; }
+      .anywhere h2 { margin: 12px 0 0; font-size: clamp(2.25rem, 4.2vw, 3.4rem); }
+      .where-list { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+      .where { min-height: 124px; display: flex; flex-direction: column; justify-content: flex-end; padding: 17px; border: var(--line); border-radius: 13px; background: #fff; }
+      .where strong { display: block; margin-bottom: 5px; font-family: "Baloo 2", sans-serif; font-size: 1.35rem; line-height: 1; }
+      .where span { font-size: .88rem; line-height: 1.35; }
 
       .cta { position: relative; overflow: hidden; padding: 55px 28px; border: var(--line); border-radius: 22px; background: var(--ink); color: #fff; text-align: center; }
       .cta::before { content: "* * *"; position: absolute; top: -15px; left: 0; width: 100%; color: var(--sun); font-family: "Baloo 2", sans-serif; font-size: 3.3rem; letter-spacing: .52em; }
@@ -94,7 +102,7 @@
       footer { padding: 29px 0 38px; text-align: center; font-size: .86rem; }
 
       @media (max-width: 780px) {
-        .hero-inner, .moment { grid-template-columns: 1fr; }
+        .hero-inner, .moment, .anywhere { grid-template-columns: 1fr; }
         .hero-art { max-width: 470px; width: 100%; margin: 0 auto; }
         .features { grid-template-columns: 1fr; }
         .moment { gap: 28px; }
@@ -110,7 +118,9 @@
         main { padding: 58px 0; }
         .features { margin-bottom: 66px; }
         .page-pairs { grid-template-columns: 1fr; }
-        .moment { margin: 70px 0 64px; padding: 22px; }
+        .moment, .anywhere { margin: 70px 0 64px; padding: 22px; }
+        .where-list { grid-template-columns: 1fr; }
+        .where { min-height: 0; }
       }
     </style>
   </head>
@@ -126,6 +136,7 @@
           <span class="eyebrow">Ages 1-4</span>
           <h1>Color outside the lines. That is the fun.</h1>
           <p>A cheerful animal coloring book with big, friendly pictures made for little hands, big imaginations, and happy coloring moments.</p>
+          <div class="quick-facts" aria-label="Book facts"><span>30+ animal illustrations</span><span>61 pages</span><span>8.5 x 11 in</span></div>
           <a class="button" href="https://www.amazon.com/dp/B0H85YVKTS" target="_blank" rel="noopener noreferrer">Get the book on Amazon</a>
         </div>
         <div class="hero-art" aria-label="Animal coloring book and a child's colorful page">
@@ -144,9 +155,9 @@
           <p>From lion cubs to curious squirrels, each friendly animal is ready for any color a little artist can imagine.</p>
         </div>
         <div class="features">
-          <article class="feature"><span class="feature-number">01</span><h3>Friendly animals</h3><p>Little artists can meet cheerful animal friends on every page.</p></article>
-          <article class="feature"><span class="feature-number">02</span><h3>Big, bold artwork</h3><p>Simple illustrations leave plenty of room for colorful ideas.</p></article>
-          <article class="feature"><span class="feature-number">03</span><h3>Every color counts</h3><p>There is no wrong way to make an animal page their own.</p></article>
+          <article class="feature"><span class="feature-number">01</span><h3>30+ animal friends</h3><p>Little artists can meet cheerful, chubby animal friends on every page.</p></article>
+          <article class="feature"><span class="feature-number">02</span><h3>Big, bold artwork</h3><p>Heavy, easy-to-see lines leave plenty of room for colorful ideas.</p></article>
+          <article class="feature"><span class="feature-number">03</span><h3>Single-sided pages</h3><p>Each coloring page is followed by a blank page for a more relaxed coloring experience.</p></article>
         </div>
       </section>
 
@@ -182,6 +193,11 @@
           <h2 id="moment-title">A few crayons. A friendly animal. A happy little break.</h2>
           <p>Whether they stay neatly inside the lines or scribble all around them, every page is a chance to explore, create, and be proud of what they made.</p>
         </div>
+      </section>
+
+      <section class="anywhere" aria-labelledby="anywhere-title">
+        <div><span class="eyebrow">Screen-free fun</span><h2 id="anywhere-title">A little animal friend for creative time anywhere.</h2></div>
+        <div class="where-list"><div class="where"><strong>At home</strong><span>For a cozy coloring break.</span></div><div class="where"><strong>On the go</strong><span>For road trips and vacations.</span></div><div class="where"><strong>Out to eat</strong><span>For waiting at a restaurant.</span></div></div>
       </section>
 
       <section class="cta" aria-labelledby="cta-title">

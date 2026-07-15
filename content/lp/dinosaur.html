@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bold and Easy Dinosaur Coloring Book - friendly dinosaur adventures for little artists ages 2-5." />
+    <title>Bold and Easy Dinosaur Coloring Book | Akuta Mitora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+    <style>
+      :root { --ink: #20302f; --paper: #fbfff8; --sky: #8edbea; --grass: #a6d85d; --lava: #f17c40; --sun: #ffe266; --line: 3px solid var(--ink); }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; }
+      a { color: inherit; }
+      .wrap { width: min(1120px, calc(100% - 40px)); margin: auto; }
+      .site-header { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+      .brand { font-family: "Baloo 2", sans-serif; font-size: 1.22rem; font-weight: 800; letter-spacing: .02em; text-decoration: none; }
+      .back { font-size: .9rem; font-weight: 700; text-decoration: none; }
+      .back:hover { text-decoration: underline; }
+      .hero { position: relative; overflow: hidden; border-block: var(--line); background: var(--sky); }
+      .hero::before, .hero::after { content: ""; position: absolute; border: var(--line); border-radius: 50%; }
+      .hero::before { width: 230px; height: 230px; top: -112px; right: 4%; background: var(--sun); }
+      .hero::after { width: 220px; height: 220px; bottom: -133px; left: -74px; background: var(--lava); }
+      .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 52px; padding: 54px 0 64px; }
+      .eyebrow { display: inline-block; padding: 4px 13px; border: var(--line); border-radius: 99px; background: #fff; font-size: .78rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+      h1, h2, h3 { font-family: "Baloo 2", sans-serif; font-weight: 800; line-height: .95; }
+      h1 { max-width: 630px; margin: 15px 0 19px; font-size: clamp(3.35rem, 7vw, 6rem); letter-spacing: -.04em; }
+      .hero-copy p { max-width: 520px; margin: 0 0 25px; font-size: 1.13rem; line-height: 1.6; }
+      .quick-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: -7px 0 24px; }
+      .quick-facts span { padding: 5px 10px; border: 2px solid var(--ink); border-radius: 999px; background: rgba(255,255,255,.78); font-size: .8rem; font-weight: 700; }
+      .button { display: inline-flex; justify-content: center; align-items: center; min-height: 54px; padding: 10px 22px; border: var(--line); border-radius: 10px; background: var(--ink); box-shadow: 5px 5px 0 rgba(32,48,47,.28); color: #fff; font-weight: 700; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
+      .button:hover { transform: translate(3px,3px); box-shadow: 2px 2px 0 rgba(32,48,47,.28); }
+      .button:focus-visible, a:focus-visible { outline: 4px solid #fff; outline-offset: 3px; }
+      .hero-art { position: relative; min-height: 430px; }
+      .book { position: absolute; z-index: 2; top: 0; right: 5%; width: min(76%,330px); overflow: hidden; border: var(--line); border-radius: 9px; background: #fff; box-shadow: 10px 10px 0 var(--ink); transform: rotate(4deg); }
+      .book img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+      .scribble { position: absolute; z-index: 1; bottom: 3px; left: 0; width: 64%; overflow: hidden; border: var(--line); border-radius: 8px; background: #fff; box-shadow: 7px 7px 0 rgba(32,48,47,.24); transform: rotate(-8deg); }
+      .scribble img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+      .burst { position: absolute; z-index: 3; right: 0; bottom: 21px; width: 120px; aspect-ratio: 1; display: grid; place-items: center; padding: 15px; border: var(--line); border-radius: 50%; background: var(--grass); font-family: "Baloo 2", sans-serif; font-size: 1.18rem; font-weight: 800; line-height: 1; text-align: center; transform: rotate(10deg); }
+      main { padding: 84px 0; }
+      .intro { max-width: 700px; margin-bottom: 38px; }
+      .intro h2 { margin: 12px 0; font-size: clamp(2.5rem,5vw,4.2rem); }
+      .intro p { max-width: 650px; margin: 0; font-size: 1.08rem; line-height: 1.6; }
+      .features { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-bottom: 96px; }
+      .feature { min-height: 180px; padding: 26px; border: var(--line); border-radius: 16px; background: #fff; }
+      .feature:nth-child(2) { background: #d8f0ba; }
+      .feature:nth-child(3) { background: #ffe9a4; }
+      .feature-number { display: block; margin-bottom: 14px; color: var(--lava); font-family: "Baloo 2", sans-serif; font-size: 2.8rem; font-weight: 800; line-height: .75; }
+      .feature h3 { margin: 0 0 8px; font-size: 1.7rem; }
+      .feature p { margin: 0; line-height: 1.5; }
+      .section-title { max-width: 700px; margin-bottom: 28px; }
+      .section-title h2 { margin: 11px 0 0; font-size: clamp(2.5rem,5vw,4rem); }
+      .page-pairs { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; }
+      .pair { padding: 19px; border: var(--line); border-radius: 19px; background: #fff; }
+      .pair h3 { margin: 2px 0 17px; font-size: 1.85rem; }
+      .pair-images { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+      .page-image { position: relative; overflow: hidden; border: var(--line); border-radius: 7px; background: #fff; }
+      .page-image img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+      .caption { position: absolute; left: 7px; bottom: 7px; padding: 4px 8px; border: 2px solid var(--ink); border-radius: 5px; background: #fff; font-size: .75rem; font-weight: 700; }
+      .pair p { margin: 16px 0 2px; line-height: 1.5; }
+      .moment { display: grid; grid-template-columns: .93fr 1.07fr; align-items: center; gap: 48px; margin: 102px 0 94px; padding: 35px; border: var(--line); border-radius: 22px; background: #d8f0ba; }
+      .moment-photo { overflow: hidden; border: var(--line); border-radius: 11px; background: #fff; box-shadow: 7px 7px 0 rgba(32,48,47,.25); transform: rotate(-2deg); }
+      .moment-photo img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+      .moment-copy h2 { margin: 13px 0; font-size: clamp(2.5rem,4.7vw,3.9rem); }
+      .moment-copy p { margin: 0; font-size: 1.08rem; line-height: 1.6; }
+      .anywhere { display: grid; grid-template-columns: .75fr 1.25fr; gap: 36px; align-items: center; margin: 0 0 94px; padding: 32px; border: var(--line); border-radius: 22px; background: #ffe9a4; }
+      .anywhere h2 { margin: 12px 0 0; font-size: clamp(2.25rem,4.2vw,3.4rem); }
+      .where-list { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+      .where { min-height: 124px; display: flex; flex-direction: column; justify-content: flex-end; padding: 17px; border: var(--line); border-radius: 13px; background: #fff; }
+      .where strong { display: block; margin-bottom: 5px; font-family: "Baloo 2", sans-serif; font-size: 1.35rem; line-height: 1; }
+      .where span { font-size: .88rem; line-height: 1.35; }
+      .cta { position: relative; overflow: hidden; padding: 55px 28px; border: var(--line); border-radius: 22px; background: var(--ink); color: #fff; text-align: center; }
+      .cta::before { content: "* * *"; position: absolute; top: -15px; left: 0; width: 100%; color: var(--sun); font-family: "Baloo 2", sans-serif; font-size: 3.3rem; letter-spacing: .52em; }
+      .cta h2 { max-width: 650px; margin: 18px auto 13px; font-size: clamp(2.6rem,5vw,4.2rem); }
+      .cta p { max-width: 530px; margin: 0 auto 24px; line-height: 1.6; }
+      .cta .button { background: var(--sun); color: var(--ink); }
+      footer { padding: 29px 0 38px; text-align: center; font-size: .86rem; }
+      @media (max-width:780px) { .hero-inner,.moment,.anywhere { grid-template-columns:1fr; } .hero-art { max-width:470px; width:100%; margin:0 auto; } .features { grid-template-columns:1fr; } .moment { gap:28px; } .moment-photo { max-width:420px; } }
+      @media (max-width:560px) { .wrap { width:min(100% - 28px,1120px); } .site-header { min-height:53px; } .back { display:none; } .hero-inner { gap:28px; padding:42px 0 49px; } .hero-art { min-height:320px; } .burst { width:92px; font-size:.9rem; } main { padding:58px 0; } .features { margin-bottom:66px; } .page-pairs { grid-template-columns:1fr; } .moment,.anywhere { margin:70px 0 64px; padding:22px; } .where-list { grid-template-columns:1fr; } .where { min-height:0; } }
+    </style>
+  </head>
+  <body>
+    <header class="wrap site-header"><a class="brand" href="index.html">Akuta Mitora</a><a class="back" href="index.html">All coloring books</a></header>
+    <section class="hero"><div class="wrap hero-inner"><div class="hero-copy"><span class="eyebrow">Ages 2-5</span><h1>Big adventures for little dino fans.</h1><p>Friendly dinosaurs, bold coloring pages, and plenty of room for every bright idea. Your little explorer gets to decide what a dinosaur looks like.</p><div class="quick-facts" aria-label="Book facts"><span>30+ dinosaur illustrations</span><span>63 pages</span><span>8.5 x 11 in</span></div><a class="button" href="https://www.amazon.com/dp/B0H85ZNZKH" target="_blank" rel="noopener noreferrer">Get the book on Amazon</a></div><div class="hero-art" aria-label="Dinosaur coloring book and a child's colorful page"><div class="book"><img src="assets/dinosaur-cover.png" alt="Bold and Easy Dinosaur Coloring Book cover" /></div><div class="scribble"><img src="assets/dinosaur-page/pachycephalosaurus-kid-art.jpeg" alt="A child's colorful dinosaur coloring page" /></div><div class="burst">ROAR<br />&amp; COLOR!</div></div></div></section>
+    <main class="wrap">
+      <section aria-labelledby="why-title"><div class="intro"><span class="eyebrow">A little prehistoric adventure</span><h2 id="why-title">Every dinosaur can be any color.</h2><p>There are no rules in this friendly dinosaur world. Green triceratops, rainbow volcanoes, and blue skies are all ready for a little artist's imagination.</p></div><div class="features"><article class="feature"><span class="feature-number">01</span><h3>30+ friendly dinos</h3><p>Meet adorable dinosaurs including Triceratops, Stegosaurus, T-Rex, and more.</p></article><article class="feature"><span class="feature-number">02</span><h3>Big, bold lines</h3><p>Simple, easy-to-see artwork gives little artists plenty of room to color.</p></article><article class="feature"><span class="feature-number">03</span><h3>Made for crayons</h3><p>Enjoy every page with crayons, colored pencils, or markers.</p></article></div></section>
+      <section aria-labelledby="inside-title"><div class="section-title"><span class="eyebrow">Peek inside</span><h2 id="inside-title">From a blank dinosaur to a colorful discovery.</h2></div><div class="page-pairs"><article class="pair"><h3>Color the triceratops</h3><div class="pair-images"><div class="page-image"><img src="assets/dinosaur-page/triceratops-lineart.jpeg" alt="Triceratops coloring page before coloring" /><span class="caption">Before</span></div><div class="page-image"><img src="assets/dinosaur-page/triceratops-kid-art.jpeg" alt="A child's colorful triceratops coloring page" /><span class="caption">After</span></div></div><p>A friendly triceratops and a volcano make a small prehistoric world to explore.</p></article><article class="pair"><h3>Draw with a dino</h3><div class="pair-images"><div class="page-image"><img src="assets/dinosaur-page/pachycephalosaurus-lineart.jpeg" alt="Dinosaur holding a crayon coloring page before coloring" /><span class="caption">Before</span></div><div class="page-image"><img src="assets/dinosaur-page/pachycephalosaurus-kid-art.jpeg" alt="A child's colorful dinosaur holding a crayon coloring page" /><span class="caption">After</span></div></div><p>Little artists can imagine their dino friends coloring right alongside them.</p></article></div></section>
+      <section class="moment" aria-labelledby="moment-title"><div class="moment-photo"><img src="assets/dinosaur-page/coloring-together.jpeg" alt="A child and adult coloring a triceratops page together" /></div><div class="moment-copy"><span class="eyebrow">Make a coloring moment</span><h2 id="moment-title">A few crayons. A dinosaur adventure. A happy little roar.</h2><p>Color together at the table, make up stories about each dinosaur, and let every page become a small adventure of its own.</p></div></section>
+      <section class="anywhere" aria-labelledby="anywhere-title"><div><span class="eyebrow">Screen-free fun</span><h2 id="anywhere-title">A dino companion for little moments everywhere.</h2></div><div class="where-list"><div class="where"><strong>At home</strong><span>For a cozy creative break.</span></div><div class="where"><strong>On the go</strong><span>For road trips and travel time.</span></div><div class="where"><strong>Out to eat</strong><span>For waiting at a restaurant.</span></div></div></section>
+      <section class="cta" aria-labelledby="cta-title"><h2 id="cta-title">Ready for a dinosaur coloring adventure?</h2><p>Bring home big, friendly dinosaurs for your little explorer to color.</p><a class="button" href="https://www.amazon.com/dp/B0H85ZNZKH" target="_blank" rel="noopener noreferrer">View on Amazon</a></section>
+    </main>
+    <footer class="wrap">Copyright 2026 Akuta Mitora. All rights reserved.</footer>
+  </body>
+</html>
