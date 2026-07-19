@@ -1,3 +1,341 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// Quiet system-like polish for the singtur Quartz site.
+
+:root {
+  --light: #fbfbfd;
+  --lightgray: rgba(60, 60, 67, 0.14);
+  --gray: rgba(60, 60, 67, 0.42);
+  --darkgray: #3a3a3c;
+  --dark: #1d1d1f;
+  --secondary: #1677d2;
+  --tertiary: #5ac8fa;
+  --highlight: rgba(22, 119, 210, 0.1);
+  --textHighlight: rgba(255, 214, 10, 0.32);
+  --quiet-rule: rgba(60, 60, 67, 0.12);
+}
+
+:root[saved-theme="dark"] {
+  --light: #111113;
+  --lightgray: rgba(235, 235, 245, 0.14);
+  --gray: rgba(235, 235, 245, 0.38);
+  --darkgray: #d1d1d6;
+  --dark: #f5f5f7;
+  --secondary: #0a84ff;
+  --tertiary: #64d2ff;
+  --highlight: rgba(10, 132, 255, 0.18);
+  --textHighlight: rgba(255, 214, 10, 0.28);
+  --quiet-rule: rgba(235, 235, 245, 0.13);
+}
+
+html {
+  background: var(--light);
+}
+
+body {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0) 22rem),
+    var(--light);
+  color: var(--darkgray);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:root[saved-theme="dark"] body {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0) 22rem),
+    var(--light);
+}
+
+.page {
+  max-width: 1440px;
+}
+
+.page > #quartz-body {
+  column-gap: 2rem;
+  min-width: 0;
+}
+
+.page > #quartz-body .sidebar {
+  padding-top: 4rem;
+}
+
+.page > #quartz-body .page-header {
+  margin-top: 4rem;
+}
+
+.center > article,
+.page-header,
+.page-footer,
+.sidebar > * {
+  min-width: 0;
+}
+
+.center > article {
+  padding: 0;
+}
+
+.page-header {
+  margin-bottom: 1.35rem;
+}
+
+.page-footer {
+  border-top: 1px solid var(--quiet-rule);
+  padding-top: 1.4rem;
+}
+
+.page-title {
+  margin-bottom: 1.25rem;
+}
+
+.page-title a {
+  color: color-mix(in srgb, var(--secondary) 72%, var(--dark));
+  font-weight: 760;
+}
+
+header {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0;
+  color: var(--dark);
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.14;
+  margin-top: 0;
+  text-wrap: balance;
+}
+
+.article-title {
+  font-size: 2rem;
+  line-height: 1.12;
+  margin-bottom: 0.35rem;
+}
+
+.markdown-rendered h1 {
+  font-size: 1.75rem;
+  line-height: 1.18;
+}
+
+.markdown-rendered h2 {
+  border-top: 1px solid var(--quiet-rule);
+  font-size: 1.42rem;
+  line-height: 1.25;
+  margin-top: 2rem;
+  padding-top: 1.45rem;
+}
+
+.markdown-rendered h3 {
+  font-size: 1.18rem;
+  line-height: 1.3;
+}
+
+p,
+li {
+  line-height: 1.68;
+}
+
+a {
+  color: var(--secondary);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--secondary) 78%, var(--dark));
+}
+
+a.internal {
+  border-radius: 5px;
+  background: transparent;
+}
+
+a.internal:hover {
+  background: var(--highlight);
+}
+
+.content-meta,
+.meta {
+  color: var(--gray);
+}
+
+.section-ul {
+  padding-left: 0;
+}
+
+.section-li {
+  list-style: none;
+}
+
+.section {
+  margin: 0.62rem 0;
+  padding: 0.1rem 0 0.78rem;
+  border-bottom: 1px solid var(--quiet-rule);
+}
+
+.section h3 {
+  margin-bottom: 0.2rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding-left: 0;
+}
+
+.tags li {
+  list-style: none;
+}
+
+.tag-link {
+  border-radius: 999px;
+  padding: 0.08rem 0.42rem;
+  background: var(--highlight);
+}
+
+blockquote {
+  border-left: 3px solid var(--secondary);
+  padding: 0.7rem 1rem;
+  background: var(--highlight);
+}
+
+pre,
+code,
+table,
+img {
+  border-radius: 10px;
+}
+
+pre {
+  border-color: var(--quiet-rule);
+}
+
+code {
+  background: rgba(60, 60, 67, 0.09);
+}
+
+:root[saved-theme="dark"] code {
+  background: rgba(235, 235, 245, 0.1);
+}
+
+img {
+  box-shadow: 0 8px 24px rgba(29, 29, 31, 0.06);
+}
+
+button,
+input,
+textarea,
+select {
+  border-radius: 10px;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid var(--quiet-rule);
+}
+
+button {
+  transition:
+    background 120ms ease,
+    transform 120ms ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+*:focus-visible {
+  outline: 3px solid rgba(22, 119, 210, 0.26);
+  outline-offset: 2px;
+}
+
+@media all and ($mobile) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .page > #quartz-body {
+    padding: 0 1rem;
+    overflow-x: hidden;
+  }
+
+  .page > #quartz-body .sidebar.left {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding-top: 1rem;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .page > #quartz-body .sidebar.left > * {
+    width: auto;
+  }
+
+  .page > #quartz-body .sidebar.left > *:nth-child(n + 3) {
+    grid-column: 1 / -1;
+  }
+
+  .page > #quartz-body .page-header {
+    margin-top: 1rem;
+  }
+
+  .page > #quartz-body .sidebar.right {
+    flex-direction: column;
+  }
+
+  .page > #quartz-body .sidebar.right > * {
+    max-height: none;
+  }
+
+  .page-title {
+    margin-bottom: 0;
+  }
+
+  .article-title,
+  h1 {
+    font-size: 1.72rem;
+    line-height: 1.15;
+    text-wrap: auto;
+  }
+
+  .markdown-rendered h1 {
+    font-size: 1.48rem;
+    line-height: 1.22;
+  }
+
+  .markdown-rendered h2 {
+    font-size: 1.26rem;
+  }
+
+  h2,
+  h3,
+  p,
+  li,
+  a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
