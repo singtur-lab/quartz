@@ -7,6 +7,8 @@
 
 最新記事:https://singtur.pages.dev/archive/2026/
 
+開発実績：[[https://singtur.pages.dev/portfolio/2026_07]]
+
 ---
 
 ## 深寅芥（みとらあくた）Akuta Mitora
